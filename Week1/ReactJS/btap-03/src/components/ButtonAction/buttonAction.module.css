@@ -1,0 +1,14 @@
+.d-flex {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}
+
+.button-styles {
+    width: 100px;
+    border-radius:10px ;
+    border: none;
+    padding: 8px 10px;
+}
