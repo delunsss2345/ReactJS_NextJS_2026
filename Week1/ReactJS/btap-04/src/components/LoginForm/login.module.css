@@ -1,0 +1,29 @@
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  width: 320px;
+  padding: 20px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 4px 10px #333;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: blue;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  background: rgb(54, 54, 108);
+}
+
