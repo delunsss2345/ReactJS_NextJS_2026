@@ -16,7 +16,7 @@ const ProductFilter = () => {
         fetchApi();
     }, [])
 
-
+    /// Do thời gian gần như không khác khi dùng useMemo, do 1000 sản phẩm thì máy em chạy không nỗi bị đơ trình duyệt
     const filterProducts = useMemo(() => {
         return products.filter(product => {
             const matchName = product.title.includes(q.trim().toLocaleLowerCase());
