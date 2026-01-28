@@ -1,0 +1,29 @@
+.btn {
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.btn-primary {
+  background: blue;
+}
+.btn-primary:hover {
+  background: rgb(38, 38, 65);
+}
+
+.btn-danger {
+  background: red;
+}
+.btn-danger:hover {
+  background: dark;
+}
+
+.btn-success {
+  background: green;
+}
+.btn-success:hover {
+  background: rgb(44, 122, 44)
+}
