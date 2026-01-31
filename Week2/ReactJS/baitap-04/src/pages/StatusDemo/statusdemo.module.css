@@ -1,0 +1,25 @@
+.container {
+  padding: 16px;
+  gap: 12px;
+}
+.btn {
+  width: fit-content;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background: #111;
+  color: #fff;
+  cursor: pointer;
+}
+.d-flex {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+.d-flex button {
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+}
