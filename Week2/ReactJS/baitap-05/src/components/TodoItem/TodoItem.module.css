@@ -1,0 +1,31 @@
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.text {
+  font-size: 14px;
+}
+.done {
+  text-decoration: line-through;
+  color: #777;
+}
+
+.del {
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+}
