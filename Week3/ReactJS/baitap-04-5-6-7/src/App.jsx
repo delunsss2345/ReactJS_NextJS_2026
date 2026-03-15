@@ -1,11 +1,11 @@
 import './App.css'
-import Bai5 from './components/bai5'
+import Bai6 from './components/bai6'
 
 function App() {
 
   return (
     <>
-      <Bai5 />
+      <Bai6 />
     </>
   )
 }
