@@ -1,0 +1,21 @@
+{
+    "todos": [
+        {
+            "title": "Tod1",
+            "id": "Uc3Exf23wd0"
+        },
+        {
+            "title": "Tod1",
+            "id": "QqhDnES-Dkg"
+        },
+        {
+            "title": "Tod1",
+            "id": "AaA29S14Ug4"
+        },
+        {
+            "title": "Tod1",
+            "id": "t8wbj3WRgw4"
+        }
+    ],
+    "$schema": "./node_modules/json-server/schema.json"
+}
