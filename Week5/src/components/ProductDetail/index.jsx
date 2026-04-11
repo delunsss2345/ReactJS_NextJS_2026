@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, useSearchParams } from "react-router";
+import { useNavigate, useParams, useSearchParams } from "react-router";
 
 const ProductDetail = ({name}) => {
     const {id } = useParams()
@@ -13,6 +13,7 @@ const ProductDetail = ({name}) => {
             
         }
     }
+    const navigate = useNavigate() ; 
     useEffect(() => {
         fetc() ; 
     },[id])
@@ -21,8 +22,8 @@ const ProductDetail = ({name}) => {
         <h1>Day la chi tiet san pham</h1>
          <h1>
             title : {detail.title}
-            
          </h1>
+         <button onClick={() => navigate("/checkout")}>Mua hang</button>
         </div>}
     </>
 }

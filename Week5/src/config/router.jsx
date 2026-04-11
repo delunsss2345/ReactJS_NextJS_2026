@@ -4,6 +4,7 @@ import Home from "../components/Home";
 import NotFound from "../components/NotFound";
 import ProductDetail from "../components/ProductDetail";
 import DashboardLayout from "../layout/DashboardLayout";
+import Checkout from "../page/Checkout";
 import Dashboard from "../page/Dashboard";
 import Order from "../page/Order";
 import ProductPage from "../page/ProductPage";
@@ -32,6 +33,10 @@ export const router = [
        path: "/products/:id" , 
        element: <ProductDetail />
     },
+    {
+        path : "/checkout" , 
+        element : <Checkout />
+    } ,
     {
         path: "/dashboard" ,
         element: <DashboardLayout />,
