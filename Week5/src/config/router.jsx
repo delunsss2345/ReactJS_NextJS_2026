@@ -3,7 +3,12 @@ import Contact from "../components/Contact";
 import Home from "../components/Home";
 import NotFound from "../components/NotFound";
 import ProductDetail from "../components/ProductDetail";
+import DashboardLayout from "../layout/DashboardLayout";
+import Dashboard from "../page/Dashboard";
+import Order from "../page/Order";
 import ProductPage from "../page/ProductPage";
+import Profile from "../page/Profile";
+import Settings from "../page/Setting";
 
 export const router = [
     {
@@ -26,6 +31,28 @@ export const router = [
     {
        path: "/products/:id" , 
        element: <ProductDetail />
+    },
+    {
+        path: "/dashboard" ,
+        element: <DashboardLayout />,
+        children : [
+            {
+                index:true , 
+                element : <Dashboard />
+            },
+            { 
+                path: "profile",
+                element: <Profile />,
+            },
+            {
+                path: "orders",
+                element: <Order />,
+            },
+            {
+                path: "settings",
+                element: <Settings />,
+            },
+        ]
     },
     {
         path: "*",
