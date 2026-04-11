@@ -1,6 +1,7 @@
 import About from "../components/About";
 import Contact from "../components/Contact";
 import Home from "../components/Home";
+import NotFound from "../components/NotFound";
 
 export const router = [
     {
@@ -16,4 +17,8 @@ export const router = [
         path : "/contact",
         element : <Contact />
     } , 
+    {
+        path: "*",
+        element: <NotFound />
+    }
 ]
