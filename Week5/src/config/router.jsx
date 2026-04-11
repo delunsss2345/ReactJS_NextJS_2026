@@ -6,6 +6,7 @@ import ProductDetail from "../components/ProductDetail";
 import DashboardLayout from "../layout/DashboardLayout";
 import Checkout from "../page/Checkout";
 import Dashboard from "../page/Dashboard";
+import Login from "../page/Login";
 import Order from "../page/Order";
 import ProductPage from "../page/ProductPage";
 import Profile from "../page/Profile";
@@ -37,6 +38,10 @@ export const router = [
         path : "/checkout" , 
         element : <Checkout />
     } ,
+    {
+        path : "/login" , 
+        element: <Login />
+    },
     {
         path: "/dashboard" ,
         element: <DashboardLayout />,
