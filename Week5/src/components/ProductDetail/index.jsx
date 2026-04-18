@@ -13,6 +13,14 @@ const ProductDetail = ({name}) => {
             
         }
     }
+    const saveCart = () => {
+        const cart = JSON.parse(localStorage.getItem("cart")) ?? []  ; 
+        if(cart && cart.length <= 0) {
+         localStorage.setItem("cart" , JSON.stringify([detail]) )
+        } 
+        cart.push(detail) ; 
+        localStorage.setItem("cart" , JSON.stringify(cart) )
+    }
     const navigate = useNavigate() ; 
     useEffect(() => {
         fetc() ; 
@@ -23,7 +31,10 @@ const ProductDetail = ({name}) => {
          <h1>
             title : {detail.title}
          </h1>
-         <button onClick={() => navigate("/checkout")}>Mua hang</button>
+         <button onClick={() => {
+            saveCart() ; 
+            navigate("/cart")
+         }}>Add to card</button>
         </div>}
     </>
 }

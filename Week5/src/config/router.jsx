@@ -4,6 +4,7 @@ import Home from "../components/Home";
 import NotFound from "../components/NotFound";
 import ProductDetail from "../components/ProductDetail";
 import DashboardLayout from "../layout/DashboardLayout";
+import CartPage from "../page/CartPage";
 import Checkout from "../page/Checkout";
 import Dashboard from "../page/Dashboard";
 import Login from "../page/Login";
@@ -63,6 +64,10 @@ export const router = [
                 element: <Settings />,
             },
         ]
+    },
+    {
+        path: "/cart" , 
+        element: <CartPage />
     },
     {
         path: "*",
