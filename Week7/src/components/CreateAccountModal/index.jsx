@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { Eye, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -7,7 +7,6 @@ const CreateAccountModal = ({ isOpen, onClose }) => {
 
   return (
     <div className="fixed inset-0 z-[150] flex items-center justify-center p-4">
-      {/* Backdrop */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -16,14 +15,12 @@ const CreateAccountModal = ({ isOpen, onClose }) => {
         onClick={onClose}
       />
 
-      {/* Modal Container */}
       <motion.div
         initial={{ scale: 0.9, opacity: 0, y: 20 }}
         animate={{ scale: 1, opacity: 1, y: 0 }}
         exit={{ scale: 0.9, opacity: 0, y: 20 }}
         className="relative bg-white rounded-[40px] w-[1200px] h-[660px] flex overflow-hidden shadow-2xl"
       >
-        {/* Close Button */}
         <button
           onClick={onClose}
           className="absolute top-6 right-6 z-20 p-2 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-sm transition-colors text-white"
@@ -31,7 +28,6 @@ const CreateAccountModal = ({ isOpen, onClose }) => {
           <X className="w-6 h-6" />
         </button>
 
-        {/* Left Column - Form */}
         <div className="w-full lg:w-1/2 flex flex-col justify-center items-center px-12 lg:px-24">
           <div className="max-w-md w-full">
             <h1 className="text-4xl font-bold text-[#1C1C1C] mb-12 text-center">
@@ -95,7 +91,6 @@ const CreateAccountModal = ({ isOpen, onClose }) => {
           </div>
         </div>
 
-        {/* Right Column - Illustration */}
         <div className="hidden lg:flex w-1/2 bg-primary items-center justify-center relative overflow-hidden">
           <div className="relative z-10 w-full flex justify-center p-12">
             <img

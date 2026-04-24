@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -7,7 +7,6 @@ const LoginModal = ({ isOpen, onClose, onSwitch }) => {
 
   return (
     <div className="fixed inset-0 z-[150] flex items-center justify-center p-4">
-      {/* Backdrop */}
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -16,14 +15,12 @@ const LoginModal = ({ isOpen, onClose, onSwitch }) => {
         onClick={onClose}
       />
 
-      {/* Modal Container */}
       <motion.div 
         initial={{ scale: 0.9, opacity: 0, y: 20 }}
         animate={{ scale: 1, opacity: 1, y: 0 }}
         exit={{ scale: 0.9, opacity: 0, y: 20 }}
         className="relative bg-white rounded-[32px] w-[1159px] h-[624px] flex overflow-hidden shadow-2xl"
       >
-        {/* Left Column - Image */}
         <div className="hidden lg:block w-1/2 relative bg-gray-100">
           <img 
             src="/image/image_72.png" 
@@ -37,7 +34,6 @@ const LoginModal = ({ isOpen, onClose, onSwitch }) => {
           </div>
         </div>
 
-        {/* Right Column - Form */}
         <div className="w-full lg:w-1/2 flex flex-col p-10 relative">
           <button 
             onClick={onClose}

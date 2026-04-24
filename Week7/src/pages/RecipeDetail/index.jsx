@@ -1,8 +1,17 @@
-﻿import React from 'react';
+import React from 'react';
 import { Star, Bookmark, Play, Send, ChevronRight } from 'lucide-react';
 import RecipeCard from '../../components/RecipeCard';
+import { Link, useParams } from 'react-router-dom';
+import { findRecipeBySlug, primaryRecipe, recipeCollections } from '../../data/recipes';
 
 const RecipeDetail = () => {
+  const { slug = primaryRecipe.slug } = useParams();
+  const recipe = findRecipeBySlug(slug);
+  const heading = recipe?.title || slug.split('-').map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+  const title = slug === primaryRecipe.slug ? primaryRecipe.title : `How to make ${heading}`;
+  const description = slug === primaryRecipe.slug
+    ? primaryRecipe.subtitle
+    : `This cooking guide shares practical steps to prepare ${heading.toLowerCase()} at home with simple ingredients and better timing.`;
   const ingredients = [
     "Yield: 4 generous servings",
     "2 pints ripe, well-rinsed strawberries",
@@ -18,9 +27,8 @@ const RecipeDetail = () => {
 
   return (
     <div className="bg-white min-h-screen">
-      {/* Breadcrumbs */}
       <div className="container-custom py-4 flex items-center gap-2 text-sm text-gray-500">
-        <a href="/" className="hover:text-primary">Home</a>
+        <Link to="/" className="hover:text-primary">Home</Link>
         <ChevronRight className="w-4 h-4" />
         <span className="text-primary font-medium">Cooking guide</span>
       </div>
@@ -28,7 +36,6 @@ const RecipeDetail = () => {
       <div className="container-custom pb-20">
         <div className="flex flex-col lg:flex-row gap-12">
           
-          {/* Left Sidebar - Ingredients */}
           <div className="w-full lg:w-1/3 order-2 lg:order-1">
              <div className="bg-white border-2 border-dashed border-pink-200 rounded-3xl p-8 sticky top-28">
                <ul className="space-y-4 mb-8">
@@ -47,17 +54,15 @@ const RecipeDetail = () => {
              </div>
           </div>
 
-          {/* Main Content */}
           <div className="w-full lg:w-2/3 order-1 lg:order-2">
              <h1 className="text-5xl font-black text-gray-900 mb-6 leading-tight">
-               How to make a Strawberry Shortcake
+               {title}
              </h1>
              
              <p className="text-gray-600 mb-10 leading-relaxed">
-               It seems like there may be a misunderstanding. If you're asking how a user can make a Strawberry Shortcake, the process would be identical to the recipe shared earlier. It involves preparing the strawberries, making the shortcakes, preparing whipped cream, and finally assembling the shortcake.
+               {description}
              </p>
 
-             {/* Author Info Card */}
              <div className="bg-gray-50 rounded-3xl p-6 mb-12 flex flex-col md:flex-row items-center gap-8 border border-gray-100 relative">
                 <div className="flex items-center gap-4">
                   <img src="/image/avatar.png" className="w-14 h-14 rounded-full border-2 border-white shadow-sm" />
@@ -92,12 +97,10 @@ const RecipeDetail = () => {
                 </div>
              </div>
 
-             {/* Main Image */}
              <div className="rounded-[40px] overflow-hidden mb-16 shadow-2xl">
                 <img src="/image/image_72.png" className="w-full" />
              </div>
 
-             {/* Steps */}
              <div className="space-y-16">
                <section>
                  <h2 className="text-3xl font-black mb-4">Step 1</h2>
@@ -135,7 +138,6 @@ const RecipeDetail = () => {
                </section>
              </div>
 
-             {/* Cooking Note Section */}
              <div className="mt-24">
                 <h3 className="text-2xl font-bold mb-6">Cooking note</h3>
                 <div className="relative">
@@ -149,7 +151,6 @@ const RecipeDetail = () => {
                 </div>
              </div>
 
-             {/* Tabs & Comments */}
              <div className="mt-16 border-b border-gray-100 flex gap-8">
                 <button className="pb-4 border-b-2 border-primary text-primary font-bold">All Notes (32)</button>
                 <button className="pb-4 text-gray-400 font-bold hover:text-gray-600">Most Helpful (20)</button>
@@ -177,14 +178,12 @@ const RecipeDetail = () => {
           </div>
         </div>
 
-        {/* Recently Viewed */}
         <div className="mt-32">
            <h2 className="text-3xl font-black mb-10">Your Recently Viewed</h2>
            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              <RecipeCard image="/image/salad_with_cabbage_and_shrimp.png" title="Salad with cabbage and shrimp" time="32 minutes" />
-              <RecipeCard image="/image/lotus_delight_salad_1.png" title="Salad of cove beans, shrimp and potatoes" time="32 minutes" />
-              <RecipeCard image="/image/five_color_salad.png" title="Sunny-side up fried eggs" time="32 minutes" />
-              <RecipeCard image="/image/corn_salad.png" title="Lotus delight salad" time="32 minutes" />
+              {recipeCollections.recentlyViewed.map((item) => (
+                <RecipeCard key={item.slug} image={item.image} title={item.title} time={item.time} to={`/cooking-guide/${item.slug}`} />
+              ))}
            </div>
         </div>
       </div>
@@ -193,4 +192,5 @@ const RecipeDetail = () => {
 };
 
 export default RecipeDetail;
+
 

@@ -7,7 +7,6 @@ const SignupModal = ({ isOpen, onClose, onSwitch }) => {
 
   return (
     <div className="fixed inset-0 z-[150] flex items-center justify-center p-4">
-      {/* Backdrop */}
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -16,7 +15,6 @@ const SignupModal = ({ isOpen, onClose, onSwitch }) => {
         onClick={onClose}
       />
 
-      {/* Modal Container */}
       <motion.div 
         initial={{ scale: 0.9, opacity: 0, y: 20 }}
         animate={{ scale: 1, opacity: 1, y: 0 }}

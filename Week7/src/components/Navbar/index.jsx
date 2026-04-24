@@ -1,11 +1,10 @@
-﻿import React from 'react';
+import React from 'react';
 import { Search } from 'lucide-react';
 
 const Navbar = ({ onLogin }) => {
   return (
     <nav className="border-b bg-white sticky top-0 z-50">
       <div className="container-custom py-4 flex items-center justify-between">
-        {/* Logo */}
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 flex items-center justify-center">
              <img src="/image/group_9.png" alt="Chefify Logo" className="w-full" />
@@ -13,7 +12,6 @@ const Navbar = ({ onLogin }) => {
           <span className="text-2xl font-bold text-primary">Chefify</span>
         </div>
 
-        {/* Search Bar */}
         <div className="flex-1 max-w-md mx-8 relative">
           <input
             type="text"
@@ -23,7 +21,6 @@ const Navbar = ({ onLogin }) => {
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4" />
         </div>
 
-        {/* Links */}
         <div className="hidden lg:flex items-center gap-6 text-sm font-medium text-gray-600">
           <a href="#" className="hover:text-primary transition-colors">What to cook</a>
           <a href="#" className="hover:text-primary transition-colors">Recipes</a>
@@ -32,7 +29,6 @@ const Navbar = ({ onLogin }) => {
           <a href="#" className="hover:text-primary transition-colors">About Us</a>
         </div>
 
-        {/* Actions */}
         <div className="flex items-center gap-4 ml-6">
           <button 
             onClick={onLogin}
